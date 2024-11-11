@@ -7,37 +7,36 @@
     <style>
         body {
             font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
             margin: 0;
             padding: 20px;
+            background-color: #f4f4f9;
         }
         h1 {
             text-align: center;
-            color: #333;
         }
-        .orarend {
-            display: flex;
-            justify-content: space-around;
-            margin-top: 20px;
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 0 auto;
         }
-        .day {
-            background-color: #fff;
+        th, td {
             padding: 10px;
-            border-radius: 5px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            width: 150px;
-        }
-        .day h2 {
             text-align: center;
-            font-size: 18px;
-            color: #333;
+            border: 1px solid #ddd;
         }
-        .day ul {
-            list-style-type: none;
-            padding: 0;
+        th {
+            background-color: #4CAF50;
+            color: black;
         }
-        .day li {
-            padding: 5px 0;
+        td {
+            background-color: #f9f9f9;
+        }
+        .time-column {
+            background-color: #d9f7be;
+            font-weight: bold;
+        }
+        .activity-cell {
+            min-height: 40px;
         }
     </style>
 </head>
@@ -45,22 +44,92 @@
 
     <h1>Órarend</h1>
 
-    <div class="orarend">
-        {% for day, subjects in orarend.items() %}
-        <div class="day">
-            <h2>{{ day }}</h2>
-            <ul>
-                {% if subjects %}
-                    {% for ora, tantargy in subjects %}
-                        <li><strong>{{ ora }}:</strong> {{ tantargy }}</li>
-                    {% endfor %}
-                {% else %}
-                    <li>Nincs óra</li>
-                {% endif %}
-            </ul>
-        </div>
-        {% endfor %}
-    </div>
+    <table>
+        <thead>
+            <tr>
+                <th class="time-column">Csengetési rend</th>
+                <th>Hétfő</th>
+                <th>Kedd</th>
+                <th>Szerda</th>
+                <th>Csütörtök</th>
+                <th>Péntek</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td class="time-column">0.7:15-8:00</td>
+                <td class="activity-cell"></td>
+                <td class="activity-cell">Testnevelés</td>
+                <td class="activity-cell"></td>
+                <td class="activity-cell">Magyar nyelvtan</td>
+                <td class="activity-cell">Angol</td>
+            </tr>
+            <tr>
+                <td class="time-column">1. 8:00-8:45</td>
+                <td class="activity-cell">Informatika</td>
+                <td class="activity-cell">Testnevelés</td>
+                <td class="activity-cell">Magyar irodalom</td>
+                <td class="activity-cell">Történelem</td>
+                <td class="activity-cell">Magyar nyelvtan</td>
+            </tr>
+            <tr>
+                <td class="time-column">2. 8:55-9:40</td>
+                <td class="activity-cell">Informatika</td>
+                <td class="activity-cell">Magyar irodalom</td>
+                <td class="activity-cell">Testnevelés</td>
+                <td class="activity-cell">Honvédelem</td>
+                <td class="activity-cell">Matematika</td>
+            </tr>
+            <tr>
+                <td class="time-column">3. 9:50-10:35</td>
+                <td class="activity-cell">Informatika</td>
+                <td class="activity-cell">Matematika</td>
+                <td class="activity-cell">Komplex</td>
+                <td class="activity-cell">Angol nyelv</td>
+                <td class="activity-cell">IKT projektmunka</td>
+            </tr>
+            <tr>
+                <td class="time-column">4. 10:45-11:30</td>
+                <td class="activity-cell">Matematika</td>
+                <td class="activity-cell">Osztályfőnöki</td>
+                <td class="activity-cell">Programozási alapok</td>
+                <td class="activity-cell">Matematika</td>
+                <td class="activity-cell">Történelem</td>
+            </tr>
+            <tr>
+                <td class="time-column">5. 11:40-12:25</td>
+                <td class="activity-cell">Angol nyev</td>
+                <td class="activity-cell">Digitális kultúra</td>
+                <td class="activity-cell">Programozási alapok</td>
+                <td class="activity-cell">Komplex</td>
+                <td class="activity-cell">Komplex</td>
+            </tr>
+            <tr>
+                <td class="time-column">6. 12:45-13:30</td>
+                <td class="activity-cell">Testnevelés</td>
+                <td class="activity-cell">Digitális kultúra</td>
+                <td class="activity-cell">IKT projektmunka</td>
+                <td class="activity-cell"></td>
+                <td class="activity-cell"></td>
+            </tr>
+            <tr>
+                <td class="time-column">7. 13:35-14:20</td>
+                <td class="activity-cell">Történelem</td>
+                <td class="activity-cell">Angol nyelv</td>
+                <td class="activity-cell">Angol nyelv</td>
+                <td class="activity-cell"></td>
+                <td class="activity-cell"></td>
+            </tr>
+            <tr>
+                <td class="time-column">8. 14:25-15:10</td>
+                <td class="activity-cell">Magyar nyelvtan</td>
+                <td class="activity-cell"></td>
+                <td class="activity-cell"></td>
+                <td class="activity-cell"></td>
+                <td class="activity-cell"></td>
+            </tr>
+        </tbody>
+    </table>
 
 </body>
 </html>
